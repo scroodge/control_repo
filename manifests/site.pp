@@ -4,6 +4,7 @@ node default {
     content => 'This is a readme',
     owner   => 'root',
   }
+}
 node 'master.puppet.vm' {
   include role::master_server
   file { '/root/README':
@@ -11,7 +12,7 @@ node 'master.puppet.vm' {
     content => "Welcome to ${fqdn}\n",
   }
 } 
-node 'minetest.puppet.vm' {
+node 'minetest.puppet.vm':{
   include role::minecraft_server
 }
 
